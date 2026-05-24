@@ -1,4 +1,5 @@
 import { Box, HStack, Progress, Stack, Text } from "@chakra-ui/react";
+import { emotionLabel } from "../emotions.js";
 
 function ScoreList({ scores }) {
   const items = Object.keys(scores).map((name) => ({
@@ -12,7 +13,7 @@ function ScoreList({ scores }) {
       {items.map((item) => (
         <Box key={item.name}>
           <HStack justify="space-between" mb={1}>
-            <Text>{item.name}</Text>
+            <Text>{emotionLabel(item.name)}</Text>
             <Text>{(item.value * 100).toFixed(2)}%</Text>
           </HStack>
           <Progress value={item.value * 100} colorScheme="blue" />

@@ -1,4 +1,5 @@
 import { Box, Heading, Stack, Text } from "@chakra-ui/react";
+import { emotionLabel } from "../emotions.js";
 import ScoreList from "./ScoreList.jsx";
 
 function PredictionResult({ result }) {
@@ -9,7 +10,7 @@ function PredictionResult({ result }) {
           <Text fontSize="sm" color="gray.500">
             Результат:
           </Text>
-          <Heading size="md">{result.label}</Heading>
+          <Heading size="md">{emotionLabel(result.label)}</Heading>
           <Text mt={1}>
             Уверенность: {(result.confidence * 100).toFixed(2)}%
           </Text>
